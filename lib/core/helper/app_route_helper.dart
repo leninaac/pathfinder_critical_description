@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pathfinder_project/core/anims/scale_page_route_anim.dart';
+import 'package:pathfinder_project/core/anims/slide_page_route_anim.dart';
 
 import '../../presentation/pages/description/page/description_page.dart';
 import '../../presentation/pages/home/home_page.dart';
@@ -16,8 +18,8 @@ class AppRouteHelper {
       
       case "/" : return MaterialPageRoute(builder: (_) => LoginPage());
       case "/login" : return MaterialPageRoute(builder: (_) => LoginPage());
-      case "/home" : return MaterialPageRoute(builder: (_) => HomePage());
-      case "/description" : return MaterialPageRoute(builder: (_) => DescriptionPage(effectType: args));
+      case "/home" : return SlidePageRoute(child: HomePage(), direction: AxisDirection.left);
+      case "/description" : return ScalePageRouteAnim(child: DescriptionPage(effectType: args)) ;
       default : return _erroRota();
     }
   }

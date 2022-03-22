@@ -26,13 +26,11 @@ class HomePage extends StatelessWidget {
             Image.asset(AppImagesHelper.tornBanner),
             Container(
               decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(AppImagesHelper.titleBackground
-                  )
-                )
-              ),
+                  image: DecorationImage(
+                      image: AssetImage(AppImagesHelper.titleBackground))),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                 child: Text('select your critical attack type',
                     textAlign: TextAlign.center,
                     style: AppStyleHelper.homeTitleTextStyle()),
@@ -43,26 +41,26 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 24, right: 24),
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 30,
-                    crossAxisSpacing: 32),
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 30,
+                      crossAxisSpacing: 32),
                   itemCount: _effectsTypes.length,
-                    itemBuilder: (context, index){
+                  itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(
-                          context, AppRouteHelper.routeDescription,
-                          arguments: _effectsTypes[index]['title']?.toUpperCase());
+                            context, AppRouteHelper.routeDescription,
+                            arguments:
+                                _effectsTypes[index]['title']?.toUpperCase());
                       },
                       child: EffectTypeButton(
-                        title: _effectsTypes[index]['title'] ?? '',
-                        image: _effectsTypes[index]['image'] ?? ''),
+                          title: _effectsTypes[index]['title'] ?? '',
+                          image: _effectsTypes[index]['image'] ?? ''),
                     );
-                    },
+                  },
                 ),
               ),
             )
-
           ],
         ),
       ),
