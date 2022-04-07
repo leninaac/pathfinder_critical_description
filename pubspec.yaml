@@ -75,6 +75,8 @@ flutter:
   assets:
     - assets/images/background/
     - assets/images/icons/
+    - assets/images/icons/critical_icons/
+    - assets/images/icons/deck_type_icons/
     - assets/images/logo/
     - assets/images/widgets/
     - assets/images/banners/

@@ -12,6 +12,13 @@ class AppStyleHelper {
         fontSize: 24);
   }
 
+  static TextStyle buttonTypeEffectTextStyle() {
+    return const TextStyle(
+        fontFamily: 'Taroca',
+        color: AppColorsHelper.criticalColorYellow,
+        fontSize: 24);
+  }
+
   static homeTitleTextStyle() {
     return const TextStyle(
       color: AppColorsHelper.criticalColorRed,
@@ -55,7 +62,19 @@ class AppStyleHelper {
         BoxShadow(color: Colors.transparent, offset: Offset(0.0, 1.0))
       ],
       image: DecorationImage(
-          image: AssetImage(AppImagesHelper.buttonLayout),
+          image: AssetImage(AppImagesHelper.buttonScrollYellowLayout),
+          fit: BoxFit.fill
+      ),
+    );
+  }
+
+  static BoxDecoration attackTypeButtonDecoration(){
+    return const BoxDecoration(
+      boxShadow: [
+        BoxShadow(color: Colors.transparent, offset: Offset(0.0, 1.0))
+      ],
+      image: DecorationImage(
+          image: AssetImage(AppImagesHelper.buttonScrollRedLayout),
           fit: BoxFit.fill
       ),
     );
